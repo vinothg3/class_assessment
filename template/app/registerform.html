@@ -1,0 +1,21 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+<title>HOME</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+    <div class="bg-primary w-50 p-5 m-5">
+        <h4>REGISTER</h4>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{rf.as_p}}
+            <label for="rp">RE_password</label>
+            <input type="password" name="rp" id="rp" >
+            <input type="submit" value="reg" class="btn bg-danger">
+        </form>
+    </div>
+</center>
+
+{% endblock %}

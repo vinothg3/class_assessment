@@ -1,0 +1,16 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+<title>list question</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+        <h1>THIS QUESTIONS</h1>
+    {% for x in li %}
+    <h2>{{x.username}}</h2>
+    <a href="{{x.pk}}">{{x.question}}</a>
+    
+    {% endfor %}
+    </center>
+{% endblock %}

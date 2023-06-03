@@ -1,0 +1,28 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {% block title %}
+    <title>Dummy</title>
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'MDB/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'MDB/css/bootstrap.min.css'%}">
+</head>
+<body>
+    <nav class="nav bg-danger">
+        <a href="{% url 'home' %}" class="nav-link">HOME</a>
+        <a href="{% url 'registerform' %}" class="nav-link">REGISTER</a>
+        {% if user.is_authenticated  %}
+        <a href="{% url 'userout' %}" class="nav-link">logout</a>
+        <a href="{% url 'Questionlist'%}" class="nav-link">question list</a>
+        {% else %}
+        <a href="{% url 'userlog' %}" class="nav-link">login</a>
+        {% endif %}
+    </nav>
+    <br>
+    <br>
+    {% block body_block %}
+    {% endblock %}
+</body>
+</html>

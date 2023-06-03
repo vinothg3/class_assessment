@@ -1,0 +1,26 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+<title>HOME</title>
+{% endblock %}
+
+{% block body_block %}
+<center>
+    <div class="bg-primary w-50 p-5 m-5">
+        <h4>LOG in</h4>
+        <form  method="POST">
+            {% csrf_token %}
+            <label for="username">username</label>
+            <input type="text" name="username" id="username">
+            <br>
+            <br>
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" >
+            <br>
+            <br>
+            <input type="submit" value="reg" class="btn bg-danger">
+        </form>
+    </div>
+</center>
+
+{% endblock %}

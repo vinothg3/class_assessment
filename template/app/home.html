@@ -1,0 +1,16 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+<title>HOME</title>
+{% endblock %}
+
+{% block body_block %}
+{% if username %}
+<h1>WELCOME TO YOU {{username}}</h1>
+<a href="{% url 'questions' %}" class="btn bg-success">question click</a>
+<a href="{% url 'answers' %}" class="btn bg-primary">answer</a>
+{% else %}
+<h1>WELCOME</h1>
+{% endif %}
+
+{% endblock %}

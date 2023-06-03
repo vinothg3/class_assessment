@@ -1,0 +1,20 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+<title>questions</title>
+{% endblock %}
+
+{% block body_block %}
+
+    <h1>Answer</h1>
+    <h2>username:{{qu.username}}</h2>
+    <h2>{{qu.question}}</h2>
+
+    {% for x in qu.allans.all %}
+    <h4>answer:{{x.answer}}</h4>
+    <h6>name:{{x.username}}</h6>
+    {% endfor %}
+
+    <a href="{% url 'answers'%}" class="btn bg-success">give your Answer</a>
+
+{% endblock %}
